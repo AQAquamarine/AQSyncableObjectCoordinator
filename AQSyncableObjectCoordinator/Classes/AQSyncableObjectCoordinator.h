@@ -1,5 +1,5 @@
 //
-//  AQSyncableObjectCoodinator.h
+//  AQSyncableObjectCoordinator.h
 //  AQSyncableObjectCoordinator
 //
 //  Created by kaiinui on 2014/11/06.
@@ -9,9 +9,22 @@
 #import <Foundation/Foundation.h>
 
 @protocol AQSyncableObject;
-@class AQDelta;
+typedef NSDictionary AQDelta;
 
-@interface AQSyncableObjectCoodinator : NSObject
+@interface AQSyncableObjectCoordinator : NSObject
+
+# pragma mark - Instantiation
+/** @name Instantiation */
+
+/**
+ *  Returns an initialized coordinator
+ *
+ *  @return An initialized coordinator
+ */
++ (instancetype)coordinator;
+
+# pragma mark - Handling Dirtify / Undirtify Syncable Objects
+/** @name Handling Dirtify / Undirtify Syncable Objects */
 
 /**
  *  Make the object dirty.
@@ -27,6 +40,20 @@
  *  @param delta  A delta that used to push changes.
  */
 - (void)undirtifySyncableObjectIfNotUpdated:(id<AQSyncableObject>)object withDelta:(AQDelta *)delta;
+
+# pragma mark - Working with Soft Deletion
+/** @name Working with Soft Deletion */
+
+/**
+ *  Mark the object as deleted.
+ *  To make the effect, you should query objects with additional predicate: `aq_isDirty == NO`
+ *
+ *  @param object An object you want to delete
+ */
+- (void)markAsDeleteObject:(id<AQSyncableObject>)object;
+
+# pragma mark - Handling Low-Level Dirtying / Undirtying Objects
+/** @name Handling Low-Level Dirtying / Undirtying Objects */
 
 /**
  *  Make the object undirty.

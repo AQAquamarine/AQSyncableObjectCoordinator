@@ -15,7 +15,7 @@
 		D451E7CA1A0BB13A00D39316 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D451E7C91A0BB13A00D39316 /* Images.xcassets */; };
 		D451E7CD1A0BB13A00D39316 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D451E7CB1A0BB13A00D39316 /* LaunchScreen.xib */; };
 		D451E7D91A0BB13A00D39316 /* AQSyncableObjectCoordinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7D81A0BB13A00D39316 /* AQSyncableObjectCoordinatorTests.m */; };
-		D451E7E51A0BB1B900D39316 /* AQSyncableObjectCoodinator.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7E41A0BB1B900D39316 /* AQSyncableObjectCoodinator.m */; };
+		D451E7E51A0BB1B900D39316 /* AQSyncableObjectCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7E41A0BB1B900D39316 /* AQSyncableObjectCoordinator.m */; };
 		D451E7E91A0BBA6C00D39316 /* NSDate+Timestamp.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7E81A0BBA6C00D39316 /* NSDate+Timestamp.m */; };
 		D451E7EB1A0BBB1E00D39316 /* NSDateTimestampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7EA1A0BBB1E00D39316 /* NSDateTimestampTests.m */; };
 /* End PBXBuildFile section */
@@ -47,8 +47,8 @@
 		D451E7D21A0BB13A00D39316 /* AQSyncableObjectCoordinatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AQSyncableObjectCoordinatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D451E7D71A0BB13A00D39316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D451E7D81A0BB13A00D39316 /* AQSyncableObjectCoordinatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AQSyncableObjectCoordinatorTests.m; sourceTree = "<group>"; };
-		D451E7E31A0BB1B900D39316 /* AQSyncableObjectCoodinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQSyncableObjectCoodinator.h; sourceTree = "<group>"; };
-		D451E7E41A0BB1B900D39316 /* AQSyncableObjectCoodinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQSyncableObjectCoodinator.m; sourceTree = "<group>"; };
+		D451E7E31A0BB1B900D39316 /* AQSyncableObjectCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQSyncableObjectCoordinator.h; sourceTree = "<group>"; };
+		D451E7E41A0BB1B900D39316 /* AQSyncableObjectCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQSyncableObjectCoordinator.m; sourceTree = "<group>"; };
 		D451E7E61A0BB92600D39316 /* AQSyncableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQSyncableObject.h; sourceTree = "<group>"; };
 		D451E7E71A0BBA6C00D39316 /* NSDate+Timestamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Timestamp.h"; sourceTree = "<group>"; };
 		D451E7E81A0BBA6C00D39316 /* NSDate+Timestamp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Timestamp.m"; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 		D451E7E21A0BB1AE00D39316 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D451E7E31A0BB1B900D39316 /* AQSyncableObjectCoodinator.h */,
-				D451E7E41A0BB1B900D39316 /* AQSyncableObjectCoodinator.m */,
+				D451E7E31A0BB1B900D39316 /* AQSyncableObjectCoordinator.h */,
+				D451E7E41A0BB1B900D39316 /* AQSyncableObjectCoordinator.m */,
 				D451E7E71A0BBA6C00D39316 /* NSDate+Timestamp.h */,
 				D451E7E81A0BBA6C00D39316 /* NSDate+Timestamp.m */,
 				D451E7E61A0BB92600D39316 /* AQSyncableObject.h */,
@@ -310,7 +310,7 @@
 				D451E7C51A0BB13A00D39316 /* ViewController.m in Sources */,
 				D451E7C21A0BB13A00D39316 /* AppDelegate.m in Sources */,
 				D451E7BF1A0BB13A00D39316 /* main.m in Sources */,
-				D451E7E51A0BB1B900D39316 /* AQSyncableObjectCoodinator.m in Sources */,
+				D451E7E51A0BB1B900D39316 /* AQSyncableObjectCoordinator.m in Sources */,
 				D451E7E91A0BBA6C00D39316 /* NSDate+Timestamp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
