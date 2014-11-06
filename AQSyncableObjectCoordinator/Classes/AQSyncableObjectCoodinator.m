@@ -7,7 +7,12 @@
 //
 
 #import "AQSyncableObjectCoodinator.h"
+#import "AQSyncableObject.h"
 
 @implementation AQSyncableObjectCoodinator
+
+- (void)dirtifySyncableObject:(id<AQSyncableObject>)object {
+    
+}
 
 @end
