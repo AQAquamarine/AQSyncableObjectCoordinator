@@ -58,12 +58,16 @@ typedef NSDictionary AQDelta;
 /**
  *  Make the object undirty.
  *
+ *  @warning This method is Low-Level.
+ *
  *  @param object An object that you want to mark as pushed.
  */
 - (void)undirtifySyncableObject:(id<AQSyncableObject>)object;
 
 /**
  *  Returns whether the object should be updated for merging data using a delta.
+ *
+ *  @warning This method is Low-Level.
  *
  *  @param object An object that you want to marge a delta
  *  @param delta  A delta you want to merge
@@ -74,6 +78,8 @@ typedef NSDictionary AQDelta;
 
 /**
  *  Returns whether the object should be updated for marking as pushed.
+ *
+ *  @warning This method is Low-Level.
  *
  *  @param object An object that you want to mark as pushed.
  *  @param delta  A delta you want to mark as pushed
