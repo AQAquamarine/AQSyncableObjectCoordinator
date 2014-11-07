@@ -11,6 +11,16 @@
 @protocol AQSyncableObject;
 typedef NSDictionary AQDelta;
 
+/**
+ *  A class that handles preparing syncable objects for Aquasync process.
+ *
+ *  This class contains methos that should be called on..
+ *
+ *  - When syncable objects is created or updated
+ *  - When you want to delete syncable objects
+ *  - `- markAsPushedUsingDeltaPack:` of `AQSyncableObjectAggregator` protocol
+ *  - `- updateRecordsUsingDeltaPack:` of `AQSyncableObjectAggregator` protocol
+ */
 @interface AQSyncableObjectCoordinator : NSObject
 
 # pragma mark - Instantiation
@@ -23,18 +33,25 @@ typedef NSDictionary AQDelta;
  */
 + (instancetype)coordinator;
 
-# pragma mark - Handling Dirtify / Undirtify Syncable Objects
-/** @name Handling Dirtify / Undirtify Syncable Objects */
+# pragma mark - Methods that should be called when the objects updated
+/** @name Methods that should be called when the objects updated */
 
 /**
  *  Make the object dirty.
+ *
+ *  **This method should be called when syncable objects are created / updated.**
  *
  *  @param object An object that you want to mark as requiring synchronization.
  */
 - (void)dirtifySyncableObject:(id<AQSyncableObject>)object;
 
+# pragma mark - Methods that should be called when Marking as Pushed
+/** @name Methods that should be called when Marking as Pushed */
+
 /**
  *  Make the object undirty if the object not updated by the user from pushing delta.
+ *
+ *  **Typically, this method is called on `- markAsPushedUsingDeltaPack:` of `AQSyncableObjectAggregator`**
  *
  *  @param object An object that you want to mark as pushed
  *  @param delta  A delta that used to push changes.
@@ -47,6 +64,8 @@ typedef NSDictionary AQDelta;
 /**
  *  Mark the object as deleted.
  *  To make the effect, you should query objects with additional predicate: `aq_isDirty == NO`
+ *
+ *  **This method should be called when you want to delete syncable objects. Do not do hard deletion.**
  *
  *  @param object An object you want to delete
  */
@@ -89,3 +108,5 @@ typedef NSDictionary AQDelta;
 - (BOOL)shouldUpdateObjectForMarkingAsPushed:(id<AQSyncableObject>)object withDelta:(AQDelta *)delta;
 
 @end
+
+#import "AQSyncableObjectCoordinator+AQSDictionarySerialization.h"

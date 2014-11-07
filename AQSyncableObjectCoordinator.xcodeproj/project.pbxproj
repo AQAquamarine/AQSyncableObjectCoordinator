@@ -12,6 +12,8 @@
 		D43F2F201A0D036700AA458F /* AQSyncableObjectCoordinator+AQSDictionarySerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D43F2F1F1A0D036700AA458F /* AQSyncableObjectCoordinator+AQSDictionarySerialization.m */; };
 		D43F2F221A0D06F000AA458F /* AQSyncableObjectCoordinatorAQSDictionarySerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D43F2F211A0D06F000AA458F /* AQSyncableObjectCoordinatorAQSDictionarySerializationTests.m */; };
 		D43F2F251A0D072700AA458F /* AQTestBook.m in Sources */ = {isa = PBXBuildFile; fileRef = D43F2F241A0D072700AA458F /* AQTestBook.m */; };
+		D43F2F281A0D0E9B00AA458F /* NSPredicate+AquaSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D43F2F271A0D0E9B00AA458F /* NSPredicate+AquaSync.m */; };
+		D43F2F2A1A0D0F9700AA458F /* NSPredicateAquasyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D43F2F291A0D0F9700AA458F /* NSPredicateAquasyncTests.m */; };
 		D451E7BF1A0BB13A00D39316 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7BE1A0BB13A00D39316 /* main.m */; };
 		D451E7C21A0BB13A00D39316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7C11A0BB13A00D39316 /* AppDelegate.m */; };
 		D451E7C51A0BB13A00D39316 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7C41A0BB13A00D39316 /* ViewController.m */; };
@@ -43,6 +45,9 @@
 		D43F2F211A0D06F000AA458F /* AQSyncableObjectCoordinatorAQSDictionarySerializationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQSyncableObjectCoordinatorAQSDictionarySerializationTests.m; sourceTree = "<group>"; };
 		D43F2F231A0D072700AA458F /* AQTestBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQTestBook.h; sourceTree = "<group>"; };
 		D43F2F241A0D072700AA458F /* AQTestBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQTestBook.m; sourceTree = "<group>"; };
+		D43F2F261A0D0E9B00AA458F /* NSPredicate+AquaSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+AquaSync.h"; sourceTree = "<group>"; };
+		D43F2F271A0D0E9B00AA458F /* NSPredicate+AquaSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+AquaSync.m"; sourceTree = "<group>"; };
+		D43F2F291A0D0F9700AA458F /* NSPredicateAquasyncTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSPredicateAquasyncTests.m; sourceTree = "<group>"; };
 		D451E7B91A0BB13A00D39316 /* AQSyncableObjectCoordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AQSyncableObjectCoordinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D451E7BD1A0BB13A00D39316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D451E7BE1A0BB13A00D39316 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -161,6 +166,7 @@
 				D451E7D61A0BB13A00D39316 /* Supporting Files */,
 				D43F2F231A0D072700AA458F /* AQTestBook.h */,
 				D43F2F241A0D072700AA458F /* AQTestBook.m */,
+				D43F2F291A0D0F9700AA458F /* NSPredicateAquasyncTests.m */,
 			);
 			path = AQSyncableObjectCoordinatorTests;
 			sourceTree = "<group>";
@@ -183,6 +189,8 @@
 				D451E7E61A0BB92600D39316 /* AQSyncableObject.h */,
 				D43F2F1E1A0D036700AA458F /* AQSyncableObjectCoordinator+AQSDictionarySerialization.h */,
 				D43F2F1F1A0D036700AA458F /* AQSyncableObjectCoordinator+AQSDictionarySerialization.m */,
+				D43F2F261A0D0E9B00AA458F /* NSPredicate+AquaSync.h */,
+				D43F2F271A0D0E9B00AA458F /* NSPredicate+AquaSync.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -354,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D43F2F281A0D0E9B00AA458F /* NSPredicate+AquaSync.m in Sources */,
 				D451E7C51A0BB13A00D39316 /* ViewController.m in Sources */,
 				D43F2F201A0D036700AA458F /* AQSyncableObjectCoordinator+AQSDictionarySerialization.m in Sources */,
 				D451E7C21A0BB13A00D39316 /* AppDelegate.m in Sources */,
@@ -370,6 +379,7 @@
 				D43F2F251A0D072700AA458F /* AQTestBook.m in Sources */,
 				D451E7D91A0BB13A00D39316 /* AQSyncableObjectCoordinatorTests.m in Sources */,
 				D43F2F221A0D06F000AA458F /* AQSyncableObjectCoordinatorAQSDictionarySerializationTests.m in Sources */,
+				D43F2F2A1A0D0F9700AA458F /* NSPredicateAquasyncTests.m in Sources */,
 				D451E7EB1A0BBB1E00D39316 /* NSDateTimestampTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
