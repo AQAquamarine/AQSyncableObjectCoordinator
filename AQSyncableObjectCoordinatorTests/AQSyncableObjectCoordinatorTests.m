@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import <OCMock.h>
+
+#import "AQSyncableObject.h"
+#import "AQSyncableObjectCoordinator.h"
 
 @interface AQSyncableObjectCoordinatorTests : XCTestCase
 
@@ -25,16 +29,135 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+# pragma mark - Low Level Dirtify / Undirtify
+
+- (void)testItUndirtifyObject {
+    id syncableObjectMock = [OCMockObject niceMockForProtocol:@protocol(AQSyncableObject)];
+    
+    [[syncableObjectMock expect] setAq_isDirty:@NO];
+    
+    [[AQSyncableObjectCoordinator coordinator] undirtifySyncableObject:syncableObjectMock];
+    
+    [syncableObjectMock verify];
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+# pragma mark - Should Update For Merging Delta
+
+- (void)testItShouldNotUpdateForMergingDeletaIfDeltaTimestampIsEqual {
+    id syncableObjectMock = [OCMockObject niceMockForProtocol:@protocol(AQSyncableObject)];
+    OCMStub([syncableObjectMock aq_localTimestamp]).andReturn(@(1));
+    AQDelta *delta = @{
+                       @"aq_localTimestamp": @(1)
+                       };
+    
+    XCTAssertFalse([[AQSyncableObjectCoordinator coordinator] shouldUpdateObjectForMergingData:syncableObjectMock withDelta:delta]);
+}
+
+- (void)testItShouldUpdateForMergingDeltaIfDeltaTimestampIsBigger {
+    id syncableObjectMock = [OCMockObject niceMockForProtocol:@protocol(AQSyncableObject)];
+    OCMStub([syncableObjectMock aq_localTimestamp]).andReturn(@(1));
+    AQDelta *delta = @{
+                       @"aq_localTimestamp": @(2)
+                       };
+    
+    XCTAssertTrue([[AQSyncableObjectCoordinator coordinator] shouldUpdateObjectForMergingData:syncableObjectMock withDelta:delta]);
+}
+
+- (void)testItShouldNotUpdateForMergingDeltaIfDeltaTimestampIsSmaller {
+    id syncableObjectMock = [OCMockObject niceMockForProtocol:@protocol(AQSyncableObject)];
+    OCMStub([syncableObjectMock aq_localTimestamp]).andReturn(@(1));
+    AQDelta *delta = @{
+                       @"aq_localTimestamp": @(0)
+                       };
+    
+    XCTAssertFalse([[AQSyncableObjectCoordinator coordinator] shouldUpdateObjectForMergingData:syncableObjectMock withDelta:delta]);
+}
+
+# pragma mark - Should Update For Marking As Pushed
+
+- (void)testItShouldUpdateForMarkingAsPushedIfDeltaTimestampIsEqual {
+    id syncableObjectMock = [OCMockObject niceMockForProtocol:@protocol(AQSyncableObject)];
+    OCMStub([syncableObjectMock aq_localTimestamp]).andReturn(@(1));
+    AQDelta *delta = @{
+                       @"aq_localTimestamp": @(1)
+                       };
+    
+    XCTAssertTrue([[AQSyncableObjectCoordinator coordinator] shouldUpdateObjectForMarkingAsPushed:syncableObjectMock withDelta:delta]);
+}
+
+- (void)testItShouldUpdateForMarkingAsPushedIfDeltaTimestampIsBigger {
+    id syncableObjectMock = [OCMockObject niceMockForProtocol:@protocol(AQSyncableObject)];
+    OCMStub([syncableObjectMock aq_localTimestamp]).andReturn(@(1));
+    AQDelta *delta = @{
+                       @"aq_localTimestamp": @(2)
+                       };
+    
+    XCTAssertTrue([[AQSyncableObjectCoordinator coordinator] shouldUpdateObjectForMarkingAsPushed:syncableObjectMock withDelta:delta]);
+}
+
+- (void)testItShouldNotUpdateForMarkingAsPushedIfDeltaTimestampIsSmaller {
+    id syncableObjectMock = [OCMockObject niceMockForProtocol:@protocol(AQSyncableObject)];
+    OCMStub([syncableObjectMock aq_localTimestamp]).andReturn(@(1));
+    AQDelta *delta = @{
+                       @"aq_localTimestamp": @(0)
+                       };
+    
+    XCTAssertFalse([[AQSyncableObjectCoordinator coordinator] shouldUpdateObjectForMarkingAsPushed:syncableObjectMock withDelta:delta]);
+}
+
+# pragma mark - Soft Deletion
+
+- (void)testItMarkAsDeleteObject {
+    id syncableObjectMock = [OCMockObject niceMockForProtocol:@protocol(AQSyncableObject)];
+    
+    [[syncableObjectMock expect] setAq_isDeleted:@YES];
+    
+    [[AQSyncableObjectCoordinator coordinator] markAsDeleteObject:syncableObjectMock];
+    
+    [syncableObjectMock verify];
+}
+
+# pragma mark - Dirtyify / Undirtify
+
+- (void)testItDirtifyObject {
+    id syncableObjectMock = [OCMockObject niceMockForProtocol:@protocol(AQSyncableObject)];
+    
+    [[syncableObjectMock expect] setAq_isDirty:@YES];
+    [[syncableObjectMock expect] setAq_localTimestamp:[OCMArg checkWithBlock:^BOOL(NSNumber *obj) {
+        return [obj unsignedIntegerValue] > 1000000000;
+    }]];
+    
+    [[AQSyncableObjectCoordinator coordinator] dirtifySyncableObject:syncableObjectMock];
+    
+    [syncableObjectMock verify];
+}
+
+- (void)testItUndirtifyObjectIfNotUpdated {
+    id syncableObjectMock = [OCMockObject niceMockForProtocol:@protocol(AQSyncableObject)];
+    AQDelta *delta = @{
+                       @"aq_localTimestamp": @(1)
+                       };
+    OCMStub([syncableObjectMock aq_localTimestamp]).andReturn(@(1));
+    
+    [[syncableObjectMock expect] setAq_isDirty:@NO];
+    
+    [[AQSyncableObjectCoordinator coordinator] undirtifySyncableObjectIfNotUpdated:syncableObjectMock withDelta:delta];
+
+    [syncableObjectMock verify];
+}
+
+- (void)testItShouldNotUndirtifyObjectIfUpdated {
+    id syncableObjectMock = [OCMockObject niceMockForProtocol:@protocol(AQSyncableObject)];
+    AQDelta *delta = @{
+                       @"aq_localTimestamp": @(1)
+                       };
+    OCMStub([syncableObjectMock aq_localTimestamp]).andReturn(@(2));
+    
+    [[syncableObjectMock reject] setAq_isDirty:@NO];
+    
+    [[AQSyncableObjectCoordinator coordinator] undirtifySyncableObjectIfNotUpdated:syncableObjectMock withDelta:delta];
+    
+    [syncableObjectMock verify];
 }
 
 @end

@@ -1,7 +1,7 @@
 platform :ios, '7.0'
 
 target "AQSyncableObjectCoordinator" do
-  pod "Aquasync"
+  pod "AQSDictionarySerialization"
 end
 
 target "AQSyncableObjectCoordinatorTests" do

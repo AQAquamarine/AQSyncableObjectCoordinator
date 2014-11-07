@@ -1,38 +1,15 @@
 PODS:
-  - AFNetworking (2.4.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-    - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.4.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.4.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.4.1)
-  - AFNetworking/Security (2.4.1)
-  - AFNetworking/Serialization (2.4.1)
-  - AFNetworking/UIKit (2.4.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-  - Aquasync (0.3.0):
-    - AFNetworking
+  - AQSDictionarySerialization (0.1.0)
   - Expecta (0.3.1)
   - OCMock (3.1.1)
 
 DEPENDENCIES:
-  - Aquasync
+  - AQSDictionarySerialization
   - Expecta
   - OCMock
 
 SPEC CHECKSUMS:
-  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
-  Aquasync: f5ecfde7876366fa9dc4bd4b9812d2bef6f45da1
+  AQSDictionarySerialization: 62309236860409b2c5c4f69b2615688e7b9a7685
   Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
   OCMock: f6cb8c162ab9d5620dddf411282c7b2c0ee78854
 

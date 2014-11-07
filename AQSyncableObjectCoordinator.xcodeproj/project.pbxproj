@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		66D2ED65B5204FBBD6054EBE /* libPods-AQSyncableObjectCoordinatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8EE86C7DDADE7B8237C9A3 /* libPods-AQSyncableObjectCoordinatorTests.a */; };
+		6AD2F57CCE7DA2EE53A93991 /* libPods-AQSyncableObjectCoordinator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD36AE63C82B811F697454F0 /* libPods-AQSyncableObjectCoordinator.a */; };
+		D43F2F201A0D036700AA458F /* AQSyncableObjectCoordinator+AQSDictionarySerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D43F2F1F1A0D036700AA458F /* AQSyncableObjectCoordinator+AQSDictionarySerialization.m */; };
+		D43F2F221A0D06F000AA458F /* AQSyncableObjectCoordinatorAQSDictionarySerializationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D43F2F211A0D06F000AA458F /* AQSyncableObjectCoordinatorAQSDictionarySerializationTests.m */; };
+		D43F2F251A0D072700AA458F /* AQTestBook.m in Sources */ = {isa = PBXBuildFile; fileRef = D43F2F241A0D072700AA458F /* AQTestBook.m */; };
+		D43F2F281A0D0E9B00AA458F /* NSPredicate+AquaSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D43F2F271A0D0E9B00AA458F /* NSPredicate+AquaSync.m */; };
+		D43F2F2A1A0D0F9700AA458F /* NSPredicateAquasyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D43F2F291A0D0F9700AA458F /* NSPredicateAquasyncTests.m */; };
 		D451E7BF1A0BB13A00D39316 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7BE1A0BB13A00D39316 /* main.m */; };
 		D451E7C21A0BB13A00D39316 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7C11A0BB13A00D39316 /* AppDelegate.m */; };
 		D451E7C51A0BB13A00D39316 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7C41A0BB13A00D39316 /* ViewController.m */; };
@@ -15,8 +21,9 @@
 		D451E7CA1A0BB13A00D39316 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D451E7C91A0BB13A00D39316 /* Images.xcassets */; };
 		D451E7CD1A0BB13A00D39316 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D451E7CB1A0BB13A00D39316 /* LaunchScreen.xib */; };
 		D451E7D91A0BB13A00D39316 /* AQSyncableObjectCoordinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7D81A0BB13A00D39316 /* AQSyncableObjectCoordinatorTests.m */; };
-		D451E7E51A0BB1B900D39316 /* AQSyncableObjectCoodinator.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7E41A0BB1B900D39316 /* AQSyncableObjectCoodinator.m */; };
-		D6C073CD6F87669DD7CEE29D /* libPods-AQSyncableObjectCoordinator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD36AE63C82B811F697454F0 /* libPods-AQSyncableObjectCoordinator.a */; };
+		D451E7E51A0BB1B900D39316 /* AQSyncableObjectCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7E41A0BB1B900D39316 /* AQSyncableObjectCoordinator.m */; };
+		D451E7E91A0BBA6C00D39316 /* NSDate+Timestamp.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7E81A0BBA6C00D39316 /* NSDate+Timestamp.m */; };
+		D451E7EB1A0BBB1E00D39316 /* NSDateTimestampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D451E7EA1A0BBB1E00D39316 /* NSDateTimestampTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +40,14 @@
 		1F3B279372235A132E832AFC /* Pods-AQSyncableObjectCoordinatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AQSyncableObjectCoordinatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AQSyncableObjectCoordinatorTests/Pods-AQSyncableObjectCoordinatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		47E000B15560CBC1F7586A5E /* Pods-AQSyncableObjectCoordinator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AQSyncableObjectCoordinator.release.xcconfig"; path = "Pods/Target Support Files/Pods-AQSyncableObjectCoordinator/Pods-AQSyncableObjectCoordinator.release.xcconfig"; sourceTree = "<group>"; };
 		BD36AE63C82B811F697454F0 /* libPods-AQSyncableObjectCoordinator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AQSyncableObjectCoordinator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D43F2F1E1A0D036700AA458F /* AQSyncableObjectCoordinator+AQSDictionarySerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AQSyncableObjectCoordinator+AQSDictionarySerialization.h"; sourceTree = "<group>"; };
+		D43F2F1F1A0D036700AA458F /* AQSyncableObjectCoordinator+AQSDictionarySerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AQSyncableObjectCoordinator+AQSDictionarySerialization.m"; sourceTree = "<group>"; };
+		D43F2F211A0D06F000AA458F /* AQSyncableObjectCoordinatorAQSDictionarySerializationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQSyncableObjectCoordinatorAQSDictionarySerializationTests.m; sourceTree = "<group>"; };
+		D43F2F231A0D072700AA458F /* AQTestBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQTestBook.h; sourceTree = "<group>"; };
+		D43F2F241A0D072700AA458F /* AQTestBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQTestBook.m; sourceTree = "<group>"; };
+		D43F2F261A0D0E9B00AA458F /* NSPredicate+AquaSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+AquaSync.h"; sourceTree = "<group>"; };
+		D43F2F271A0D0E9B00AA458F /* NSPredicate+AquaSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+AquaSync.m"; sourceTree = "<group>"; };
+		D43F2F291A0D0F9700AA458F /* NSPredicateAquasyncTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSPredicateAquasyncTests.m; sourceTree = "<group>"; };
 		D451E7B91A0BB13A00D39316 /* AQSyncableObjectCoordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AQSyncableObjectCoordinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D451E7BD1A0BB13A00D39316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D451E7BE1A0BB13A00D39316 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,8 +61,12 @@
 		D451E7D21A0BB13A00D39316 /* AQSyncableObjectCoordinatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AQSyncableObjectCoordinatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D451E7D71A0BB13A00D39316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D451E7D81A0BB13A00D39316 /* AQSyncableObjectCoordinatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AQSyncableObjectCoordinatorTests.m; sourceTree = "<group>"; };
-		D451E7E31A0BB1B900D39316 /* AQSyncableObjectCoodinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQSyncableObjectCoodinator.h; sourceTree = "<group>"; };
-		D451E7E41A0BB1B900D39316 /* AQSyncableObjectCoodinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQSyncableObjectCoodinator.m; sourceTree = "<group>"; };
+		D451E7E31A0BB1B900D39316 /* AQSyncableObjectCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQSyncableObjectCoordinator.h; sourceTree = "<group>"; };
+		D451E7E41A0BB1B900D39316 /* AQSyncableObjectCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQSyncableObjectCoordinator.m; sourceTree = "<group>"; };
+		D451E7E61A0BB92600D39316 /* AQSyncableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQSyncableObject.h; sourceTree = "<group>"; };
+		D451E7E71A0BBA6C00D39316 /* NSDate+Timestamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Timestamp.h"; sourceTree = "<group>"; };
+		D451E7E81A0BBA6C00D39316 /* NSDate+Timestamp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Timestamp.m"; sourceTree = "<group>"; };
+		D451E7EA1A0BBB1E00D39316 /* NSDateTimestampTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateTimestampTests.m; sourceTree = "<group>"; };
 		D499173230E61AA5A6FE2DCA /* Pods-AQSyncableObjectCoordinatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AQSyncableObjectCoordinatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AQSyncableObjectCoordinatorTests/Pods-AQSyncableObjectCoordinatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D768DE7D6243C5A41C4C298B /* Pods-AQSyncableObjectCoordinator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AQSyncableObjectCoordinator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AQSyncableObjectCoordinator/Pods-AQSyncableObjectCoordinator.debug.xcconfig"; sourceTree = "<group>"; };
 		FB8EE86C7DDADE7B8237C9A3 /* libPods-AQSyncableObjectCoordinatorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AQSyncableObjectCoordinatorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6C073CD6F87669DD7CEE29D /* libPods-AQSyncableObjectCoordinator.a in Frameworks */,
+				6AD2F57CCE7DA2EE53A93991 /* libPods-AQSyncableObjectCoordinator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +161,12 @@
 			isa = PBXGroup;
 			children = (
 				D451E7D81A0BB13A00D39316 /* AQSyncableObjectCoordinatorTests.m */,
+				D43F2F211A0D06F000AA458F /* AQSyncableObjectCoordinatorAQSDictionarySerializationTests.m */,
+				D451E7EA1A0BBB1E00D39316 /* NSDateTimestampTests.m */,
 				D451E7D61A0BB13A00D39316 /* Supporting Files */,
+				D43F2F231A0D072700AA458F /* AQTestBook.h */,
+				D43F2F241A0D072700AA458F /* AQTestBook.m */,
+				D43F2F291A0D0F9700AA458F /* NSPredicateAquasyncTests.m */,
 			);
 			path = AQSyncableObjectCoordinatorTests;
 			sourceTree = "<group>";
@@ -158,8 +182,15 @@
 		D451E7E21A0BB1AE00D39316 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D451E7E31A0BB1B900D39316 /* AQSyncableObjectCoodinator.h */,
-				D451E7E41A0BB1B900D39316 /* AQSyncableObjectCoodinator.m */,
+				D451E7E31A0BB1B900D39316 /* AQSyncableObjectCoordinator.h */,
+				D451E7E41A0BB1B900D39316 /* AQSyncableObjectCoordinator.m */,
+				D451E7E71A0BBA6C00D39316 /* NSDate+Timestamp.h */,
+				D451E7E81A0BBA6C00D39316 /* NSDate+Timestamp.m */,
+				D451E7E61A0BB92600D39316 /* AQSyncableObject.h */,
+				D43F2F1E1A0D036700AA458F /* AQSyncableObjectCoordinator+AQSDictionarySerialization.h */,
+				D43F2F1F1A0D036700AA458F /* AQSyncableObjectCoordinator+AQSDictionarySerialization.m */,
+				D43F2F261A0D0E9B00AA458F /* NSPredicate+AquaSync.h */,
+				D43F2F271A0D0E9B00AA458F /* NSPredicate+AquaSync.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -171,11 +202,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D451E7DC1A0BB13A00D39316 /* Build configuration list for PBXNativeTarget "AQSyncableObjectCoordinator" */;
 			buildPhases = (
-				60076509166E7A3A1B2D5CE2 /* Check Pods Manifest.lock */,
+				A1C0DC7717BE5351D9B09383 /* Check Pods Manifest.lock */,
 				D451E7B51A0BB13A00D39316 /* Sources */,
 				D451E7B61A0BB13A00D39316 /* Frameworks */,
 				D451E7B71A0BB13A00D39316 /* Resources */,
-				09C0B5C075CA9A5BD13CE929 /* Copy Pods Resources */,
+				3BAED7C9B582E753053F5772 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -279,7 +310,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AQSyncableObjectCoordinatorTests/Pods-AQSyncableObjectCoordinatorTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		09C0B5C075CA9A5BD13CE929 /* Copy Pods Resources */ = {
+		3BAED7C9B582E753053F5772 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -294,7 +325,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AQSyncableObjectCoordinator/Pods-AQSyncableObjectCoordinator-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		60076509166E7A3A1B2D5CE2 /* Check Pods Manifest.lock */ = {
+		A1C0DC7717BE5351D9B09383 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -331,10 +362,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D43F2F281A0D0E9B00AA458F /* NSPredicate+AquaSync.m in Sources */,
 				D451E7C51A0BB13A00D39316 /* ViewController.m in Sources */,
+				D43F2F201A0D036700AA458F /* AQSyncableObjectCoordinator+AQSDictionarySerialization.m in Sources */,
 				D451E7C21A0BB13A00D39316 /* AppDelegate.m in Sources */,
 				D451E7BF1A0BB13A00D39316 /* main.m in Sources */,
-				D451E7E51A0BB1B900D39316 /* AQSyncableObjectCoodinator.m in Sources */,
+				D451E7E51A0BB1B900D39316 /* AQSyncableObjectCoordinator.m in Sources */,
+				D451E7E91A0BBA6C00D39316 /* NSDate+Timestamp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +376,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D43F2F251A0D072700AA458F /* AQTestBook.m in Sources */,
 				D451E7D91A0BB13A00D39316 /* AQSyncableObjectCoordinatorTests.m in Sources */,
+				D43F2F221A0D06F000AA458F /* AQSyncableObjectCoordinatorAQSDictionarySerializationTests.m in Sources */,
+				D43F2F2A1A0D0F9700AA458F /* NSPredicateAquasyncTests.m in Sources */,
+				D451E7EB1A0BBB1E00D39316 /* NSDateTimestampTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
