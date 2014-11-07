@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  This protocol represents Aquasync-able object.
+ *
+ *  Objects that conforms to `AQSyncableObject` can be handled with `AQSyncableObjectCoordinator` for preparing objects for Aquasync process.
+ */
 @protocol AQSyncableObject <NSObject>
 
 /**
