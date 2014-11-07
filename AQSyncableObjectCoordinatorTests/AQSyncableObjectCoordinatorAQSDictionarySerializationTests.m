@@ -31,6 +31,8 @@
     [super tearDown];
 }
 
+# pragma mark - Low-Level
+
 - (void)testItAppliesPatch {
     AQTestBook *book = [[AQTestBook alloc] init];
     AQDelta *delta = @{
@@ -40,6 +42,44 @@
     AQTestBook *patchAppliedBook = [[AQSyncableObjectCoordinator coordinator] patchAppliedObjectWithSyncableObject:book withDelta:delta];
     
     XCTAssertTrue([patchAppliedBook.aq_deviceToken isEqualToString:@"devicetoken"]);
+}
+
+# pragma mark - Public
+
+- (void)testItShouldNotApplyPatchIfNotUpdated {
+    AQTestBook *book = [[AQTestBook alloc] init];
+    book.aq_localTimestamp = @(100);
+    AQDelta *delta = @{
+                       @"aq_localTimestamp": @(99),
+                       @"aq_deviceToken": @"devicetoken"
+                       };
+    AQTestBook *patchMayAppliedBook = [[AQSyncableObjectCoordinator coordinator] patchAppliedObjectIfUpdatedWithSyncableObject:book withDelta:delta];
+    
+    XCTAssertFalse([patchMayAppliedBook.aq_deviceToken isEqualToString:@"devicetoken"]);
+}
+
+- (void)testItShouldApplyPatchIfUpdated {
+    AQTestBook *book = [[AQTestBook alloc] init];
+    book.aq_localTimestamp = @(100);
+    AQDelta *delta = @{
+                       @"aq_localTimestamp": @(101),
+                       @"aq_deviceToken": @"devicetoken"
+                       };
+    AQTestBook *patchMayAppliedBook = [[AQSyncableObjectCoordinator coordinator] patchAppliedObjectIfUpdatedWithSyncableObject:book withDelta:delta];
+    
+    XCTAssertTrue([patchMayAppliedBook.aq_deviceToken isEqualToString:@"devicetoken"]);
+}
+
+- (void)testItShouldNotApplyPatchIfDeltaHasSameTimestamp {
+    AQTestBook *book = [[AQTestBook alloc] init];
+    book.aq_localTimestamp = @(100);
+    AQDelta *delta = @{
+                       @"aq_localTimestamp": @(100),
+                       @"aq_deviceToken": @"devicetoken"
+                       };
+    AQTestBook *patchMayAppliedBook = [[AQSyncableObjectCoordinator coordinator] patchAppliedObjectIfUpdatedWithSyncableObject:book withDelta:delta];
+    
+    XCTAssertFalse([patchMayAppliedBook.aq_deviceToken isEqualToString:@"devicetoken"]);
 }
 
 @end

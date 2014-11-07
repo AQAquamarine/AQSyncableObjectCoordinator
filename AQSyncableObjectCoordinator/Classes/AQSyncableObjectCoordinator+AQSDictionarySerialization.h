@@ -22,10 +22,12 @@
  *
  *  @return The delta patch applied syncable object or the syncable object
  */
-- (id)patchAppliedObjectIfNotUpdatedWithSyncableObject:(NSObject <AQSyncableObject, AQSDictionarySerialization>*)syncableObject withDelta:(AQDelta *)delta;
+- (id)patchAppliedObjectIfUpdatedWithSyncableObject:(NSObject <AQSyncableObject, AQSDictionarySerialization>*)syncableObject withDelta:(AQDelta *)delta;
 
 /**
  *  Returns the given Delta patch applied syncable object.
+ *
+ *  @warning This is Low-Level method.
  *
  *  @param syncableObject A syncable object you want to apply a patch with a delta. This object should conforms to both `AQSyncableObject` and `AQSDictionarySerialization`.
  *  @param delta          A delta you want to apply a patch with

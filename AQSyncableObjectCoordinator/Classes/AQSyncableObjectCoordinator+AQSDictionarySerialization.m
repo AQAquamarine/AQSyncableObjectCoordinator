@@ -13,7 +13,7 @@
 
 @implementation AQSyncableObjectCoordinator (AQSDictionarySerialization)
 
-- (id)patchAppliedObjectIfNotUpdatedWithSyncableObject:(NSObject<AQSyncableObject, AQSDictionarySerialization> *)syncableObject withDelta:(NSDictionary *)delta {
+- (id)patchAppliedObjectIfUpdatedWithSyncableObject:(NSObject<AQSyncableObject, AQSDictionarySerialization> *)syncableObject withDelta:(NSDictionary *)delta {
     if ([self shouldUpdateObjectForMergingData:syncableObject withDelta:delta] == NO) { return syncableObject; }
     
     return [self patchAppliedObjectWithSyncableObject:syncableObject withDelta:delta];
