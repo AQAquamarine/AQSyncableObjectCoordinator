@@ -10,6 +10,13 @@
 
 @protocol AQSyncableObject <NSObject>
 
+/**
+ *  It should return Aquasync DeltaPack compliant model name such as "Book".
+ *
+ *  @return The name of the model like "Book"
+ */
+- (NSString *)aq_modelName;
+
 - (NSString *)aq_gid;
 - (void)setAq_gid:(NSString *)aq_gid;
 
