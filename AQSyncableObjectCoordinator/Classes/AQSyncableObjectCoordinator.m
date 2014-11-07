@@ -47,7 +47,7 @@
     NSUInteger objectTimestamp = [[object aq_localTimestamp] unsignedIntegerValue];
     NSUInteger deltaTimestamp = [delta[@"aq_localTimestamp"] unsignedIntegerValue];
     
-    return deltaTimestamp >= objectTimestamp;
+    return deltaTimestamp > objectTimestamp;
 }
 
 - (BOOL)shouldUpdateObjectForMarkingAsPushed:(id<AQSyncableObject>)object withDelta:(AQDelta *)delta {

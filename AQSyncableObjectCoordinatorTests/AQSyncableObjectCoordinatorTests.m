@@ -43,14 +43,14 @@
 
 # pragma mark - Should Update For Merging Delta
 
-- (void)testItShouldUpdateForMergingDeltaIfDeltaTimestampIsEqual {
+- (void)testItShouldNotUpdateForMergingDeletaIfDeltaTimestampIsEqual {
     id syncableObjectMock = [OCMockObject niceMockForProtocol:@protocol(AQSyncableObject)];
     OCMStub([syncableObjectMock aq_localTimestamp]).andReturn(@(1));
     AQDelta *delta = @{
                        @"aq_localTimestamp": @(1)
                        };
     
-    XCTAssertTrue([[AQSyncableObjectCoordinator coordinator] shouldUpdateObjectForMergingData:syncableObjectMock withDelta:delta]);
+    XCTAssertFalse([[AQSyncableObjectCoordinator coordinator] shouldUpdateObjectForMergingData:syncableObjectMock withDelta:delta]);
 }
 
 - (void)testItShouldUpdateForMergingDeltaIfDeltaTimestampIsBigger {
